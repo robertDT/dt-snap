@@ -231,6 +231,7 @@ AlignerContext::beginIteration()
     readerContext.genome = index != NULL ? index->getGenome() : NULL;
     readerContext.ignoreSecondaryAlignments = options->ignoreSecondaryAlignments;
     readerContext.ignoreSupplementaryAlignments = options->ignoreSecondaryAlignments;   // Maybe we should split them out
+    strncpy(readerContext.junctionSeq, options->junctionSeq, MAX_JUNCTION_TRIM);
     DataSupplier::ExpansionFactor = options->expansionFactor;
 
     typeSpecificBeginIteration();
