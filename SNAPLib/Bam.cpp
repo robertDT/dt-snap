@@ -746,7 +746,7 @@ BAMFormat::determinePairType(
      if ((direction == RC) == (mateDirection == RC)) {
        return 'S'; // same?
      }
-     if ((direction != RC && location < mateLocation + mate->getDataLength()) || (direction != RC && mateLocation < location + read->getDataLength())) {
+     if ((direction != RC && location < mateLocation + mate->getDataLength()) || (direction == RC && mateLocation < location + read->getDataLength())) {
        return 'I'; // innie
      } 
      return 'O'; // outie
